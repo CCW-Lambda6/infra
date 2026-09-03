@@ -1,0 +1,14 @@
+#!/bin/zsh
+set -euo pipefail
+
+source /AI/infra/env.sh
+source /AI/state/secrets.sh
+export AIOHTTP_CLIENT_TIMEOUT=1800
+export AIOHTTP_CLIENT_TIMEOUT_MODEL_LIST=15
+export AIOHTTP_CLIENT_TIMEOUT_OPENAI_MODEL_LIST=15
+export WEBUI_SECRET_KEY=$(</AI/state/secrets/open-webui-secret-key)
+
+exec /Users/ccw/.local/bin/open-webui \
+  serve \
+  --host 0.0.0.0 \
+  --port 8080

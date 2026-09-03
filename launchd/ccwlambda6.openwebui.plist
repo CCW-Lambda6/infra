@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ccwlambda6.openwebui</string>
+
+    <!--
+      LaunchDaemon 屬於 system domain，
+      但 Open WebUI 本身不要用 root 跑。
+    -->
+    <key>UserName</key>
+    <string>ccw</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/AI/infra/bin/start_open-webui</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/AI/cwd</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Users/ccw</string>
+    </dict>
+
+    <!-- 開機即啟動 -->
+    <key>RunAtLoad</key>
+    <true/>
+
+    <!-- 死掉就重新拉起 -->
+    <key>KeepAlive</key>
+    <true/>
+
+    <!-- crash loop 時至少隔 10 秒 -->
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <!-- 0077；新檔案預設只有此 user 可讀 -->
+    <key>Umask</key>
+    <integer>63</integer>
+
+    <key>StandardOutPath</key>
+    <string>/AI/logs/open-webui/stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/AI/logs/open-webui/stderr.log</string>
+</dict>
+</plist>

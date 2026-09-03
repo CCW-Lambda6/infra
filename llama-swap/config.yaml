@@ -1,0 +1,68 @@
+logLevel: debug
+logToStdout: both
+healthCheckTimeout: 120
+
+models:
+
+  "qwen3.6-35b-a3b":
+    name: "Qwen3.6 35B-A3B Q6_K (unsloth)"
+    ttl: 300
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Qwen3.6-35B-A3B-GGUF/snapshots/a483e9e6cbd595906af30beda3187c2663a1118c/Qwen3.6-35B-A3B-UD-Q6_K.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "qwen3.6-27b":
+    name: "Qwen3.6 27B Q6_K (unsloth)"
+    ttl: 300
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Qwen3.6-27B-GGUF/snapshots/82d411acf4a06cfb8d9b073a5211bf410bfc29bf/Qwen3.6-27B-Q6_K.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "qwen3.8-27b":
+    name: "Qwen3.8 27B Q6_K (unsloth)"
+    ttl: 300
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/Qwen3.8-27B-Q6_K.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "qwen3.8-27b-vision":
+    name: "Qwen3.8 27B Q6_K Vision (unsloth)"
+    ttl: 300
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/Qwen3.8-27B-Q6_K.gguf --mmproj /Users/Shared/AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/mmproj-BF16.gguf --ctx-size 16384 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "qwen3.8-27b-obliterated":
+    name: "Qwen3.8 27B OBLITERATED Q6_K (mradermacher)"
+    ttl: 300
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--mradermacher--Qwen3.8-27B-OBLITERATED-GGUF/snapshots/33806a177e79b9c6d0b0eff8a8043cb603ff7d0a/Qwen3.8-27B-OBLITERATED.Q6_K.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "qwen3.8-27b-uncensored-FP8-Q8_0":
+    name: "Qwen3.8 27B Uncensored FP8 Q8_0 (orcarouter)"
+    ttl: 0
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/models/gguf/orcarouter--Qwen3.8-27B-Uncensored-FP8/from-FP8-Q8_0.gguf --ctx-size 32768 --n-gpu-layers all --jinja --flash-attn on --parallel 1"
+
+  "nemotron-30b-a3b":
+    name: "Nemotron-3.5 Lightning 30B-A3B Q6_K_XL (unsloth)"
+    ttl: 300
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF/snapshots/f2d3fe3694501008786e81e5f20360cbf715496a/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-UD-Q6_K_XL.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "mistral-small-119b":
+    name: "Mistral Small 4 119B Q4_K_M (unsloth)"
+    ttl: 600
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Mistral-Small-4-119B-2603-GGUF/snapshots/bd93c721735aa32c035c0f19e738cb3371fd56ff/UD-Q4_K_M/Mistral-Small-4-119B-2603-UD-Q4_K_M-00001-of-00003.gguf --ctx-size 65536 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "deepseek-v4-flash":
+    name: "DeepSeek-V4-Flash UD-IQ3_XXS (unsloth)"
+    ttl: 600
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--DeepSeek-V4-Flash-0731-GGUF/snapshots/fbbb5b93fb787c21338159b0af3318bb3f4d9768/UD-IQ3_XXS/DeepSeek-V4-Flash-0731-UD-IQ3_XXS-00001-of-00004.gguf --ctx-size 8192 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "Qwen3.8-27B-Uncensored-OrcaRouter":
+    name: "Qwen3.8 27B Uncensored Q6_K（OrcaRouter）"
+    ttl: 600
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /Users/Shared/AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/Qwen3.8-27B-Uncensored-OrcaRouter-Q6_K.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+  "Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q6-K-P":
+    name: "Qwen3.8 27B Uncensored Q6_K_P （HauhauCS, Aggressive）"
+    ttl: 600
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /Users/Shared/AI/hfhome/hub/models--HauhauCS--Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF/snapshots/993a5971fda8f30dd1b7eb2654792ba4415c7460/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf --ctx-size 32768 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+
+aliases:
+  "qwen3-35b":    "qwen3.6-35b-a3b"
+  "qwen3-27b":    "qwen3.6-27b"
+  "qwen3-vision": "qwen3.8-27b-vision"
+  "nemotron":     "nemotron-30b-a3b"
+  "mistral":      "mistral-small-119b"
+  "deepseek":     "deepseek-v4-flash"

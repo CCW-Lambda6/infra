@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>ccwlambda6.llama-swap</string>
+
+    <key>UserName</key>
+    <string>ccw</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/llama-swap</string>
+        <string>--config</string>
+        <string>/Users/Shared/AI/infra/llama-swap/config.yaml</string>
+        <string>--listen</string>
+        <string>localhost:8000</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/Shared/AI/infra/llama-swap</string>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Users/ccw</string>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>ThrottleInterval</key>
+    <integer>10</integer>
+
+    <key>ProcessType</key>
+    <string>Background</string>
+
+    <key>Umask</key>
+    <integer>63</integer>
+
+    <key>StandardOutPath</key>
+    <string>/Users/Shared/AI/logs/llama-swap/stdout.log</string>
+
+    <key>StandardErrorPath</key>
+    <string>/Users/Shared/AI/logs/llama-swap/stderr.log</string>
+</dict>
+</plist>
