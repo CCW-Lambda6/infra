@@ -112,7 +112,7 @@ unloadTimeout: 10
 # - macro names must not be a reserved name: PID, PORT, or MODEL_ID
 # - macro values can be numbers, bools, or strings
 # - macros can contain other macros, but they must be defined before they are used
-# - environment variables can be referenced with ${env.VAR_NAME} syntax
+# - environment variables can be referenced with $env.VAR_NAME syntax
 #   - env macros are substituted first, before regular macros
 #   - if the env var is not set, config loading will fail with an error
 # - ${PORT} is assigned while loading each model that uses it in cmd
@@ -129,7 +129,7 @@ macros:
 #   "default_args": "--ctx-size ${default_ctx}"
 
 #   Example of environment variable macros
-#   - ${env.VAR_NAME} pulls the value from the system environment
+#   - $env.VAR_NAME pulls the value from the system environment
 #   - useful for paths, secrets, or machine-specific configuration
 #   "models_dir": "${env.HOME}/models"
 
