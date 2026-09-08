@@ -5,22 +5,18 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>ccwlambda6.llama-swap</string>
+    <string>ccwlambda6.image-fetch-mcp</string>
 
     <key>UserName</key>
     <string>ccw</string>
 
     <key>ProgramArguments</key>
     <array>
-        <string>/opt/homebrew/bin/llama-swap</string>
-        <string>--config</string>
-        <string>/Users/Shared/AI/infra/llama-swap/config.yaml</string>
-        <string>--listen</string>
-        <string>0.0.0.0:8000</string>
+        <string>/AI/infra/mcp/image-fetch/start.sh</string>
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/Shared/AI/infra/llama-swap</string>
+    <string>/AI/cwd</string>
 
     <key>EnvironmentVariables</key>
     <dict>
@@ -28,25 +24,29 @@
         <string>/Users/ccw</string>
     </dict>
 
+    <!-- 開機即啟動 -->
     <key>RunAtLoad</key>
     <true/>
 
+    <!-- 死掉就重新拉起 -->
     <key>KeepAlive</key>
     <true/>
 
+    <!-- crash loop 時至少隔 10 秒 -->
     <key>ThrottleInterval</key>
     <integer>10</integer>
 
     <key>ProcessType</key>
     <string>Background</string>
 
+    <!-- 0077；新檔案預設只有此 user 可讀 -->
     <key>Umask</key>
     <integer>63</integer>
 
     <key>StandardOutPath</key>
-    <string>/Users/Shared/AI/logs/llama-swap/stdout.log</string>
+    <string>/AI/logs/image-fetch-mcp/stdout.log</string>
 
     <key>StandardErrorPath</key>
-    <string>/Users/Shared/AI/logs/llama-swap/stderr.log</string>
+    <string>/AI/logs/image-fetch-mcp/stderr.log</string>
 </dict>
 </plist>

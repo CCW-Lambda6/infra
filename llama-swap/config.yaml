@@ -203,7 +203,7 @@ models:
 
   "qwen3.8-27b-vision":
     name: "Qwen3.8 27B Q6_K Vision (unsloth)"
-    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/Qwen3.8-27B-Q6_K.gguf --mmproj /Users/Shared/AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/mmproj-BF16.gguf --ctx-size 16384 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/Qwen3.8-27B-Q6_K.gguf --mmproj /AI/hfhome/hub/models--unsloth--Qwen3.8-27B-GGUF/snapshots/fdd03b8bbd279c1694563650e79d85a2373d9934/mmproj-BF16.gguf --ctx-size 16384 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
 
   "qwen3.8-27b-obliterated":
     name: "Qwen3.8 27B OBLITERATED Q6_K (mradermacher)"
@@ -228,19 +228,18 @@ models:
     ttl: 600
     cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--unsloth--DeepSeek-V4-Flash-0731-GGUF/snapshots/fbbb5b93fb787c21338159b0af3318bb3f4d9768/UD-IQ3_XXS/DeepSeek-V4-Flash-0731-UD-IQ3_XXS-00001-of-00004.gguf --ctx-size 8192 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
 
-  "Qwen3.8-27B-Uncensored-OrcaRouter-Q6K":
-    name: "Qwen3.8 27B Q6_K (OrcaRouter, uncensored)"
+  "Qwen3.8-27B-Uncensored-OrcaRouter-Q6K-short":
+    name: "Qwen3.8 27B Q6_K (Orca Uncensored, ctx=131072)"
     ttl: 0
-    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /Users/Shared/AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/Qwen3.8-27B-Uncensored-OrcaRouter-Q6_K.gguf --ctx-size 131072 --parallel 1 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/Qwen3.8-27B-Uncensored-OrcaRouter-Q6_K.gguf --mmproj /AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/AUX/mmproj-Qwen3.8-27B-Uncensored-OrcaRouter-BF16.gguf --ctx-size 131072 --parallel 1 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
 
-  "Qwen3.8-27B-Uncensored-OrcaRouter-Q6K-long":
-    name: "Qwen3.8 27B Q6_K (OrcaRouter, uncensored, ctx=0)"
-    ttl: 0
-    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /Users/Shared/AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/Qwen3.8-27B-Uncensored-OrcaRouter-Q6_K.gguf --ctx-size 0 --parallel 1 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+  "Qwen3.8-27B-Uncensored-OrcaRouter-Q6K":
+    name: "Qwen3.8 27B Q6_K (Orca Uncensored, long aka ctx=0)"
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/Qwen3.8-27B-Uncensored-OrcaRouter-Q6_K.gguf --mmproj /AI/hfhome/hub/models--chimingw--Qwen3.8-27B-Uncensored-OrcaRouter-GGUF/snapshots/58ebd123013160600229eda180b5b17f3fb7af9d/AUX/mmproj-Qwen3.8-27B-Uncensored-OrcaRouter-BF16.gguf --ctx-size 0 --parallel 1 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
 
   "Qwen3.8-27B-Uncensored-HauhauCS-Q6KP":
-    name: "Qwen3.8 27B Q6_K_P (HauhauCS, Uncensored+Aggressive)"
-    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /Users/Shared/AI/hfhome/hub/models--HauhauCS--Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF/snapshots/993a5971fda8f30dd1b7eb2654792ba4415c7460/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf --ctx-size 0 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
+    name: "Qwen3.8 27B Q6_K_P (HauhauCS U+A, long aka ctx=0)"
+    cmd: "/opt/homebrew/bin/llama-server --port ${PORT} --model /AI/hfhome/hub/models--HauhauCS--Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF/snapshots/993a5971fda8f30dd1b7eb2654792ba4415c7460/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf --mmproj /AI/hfhome/hub/models--HauhauCS--Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF/snapshots/993a5971fda8f30dd1b7eb2654792ba4415c7460/mmproj-Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-BF16.gguf --ctx-size 0 --n-gpu-layers 99 --jinja --cache-type-k q8_0 --cache-type-v q8_0 --threads 16"
 
 aliases:
   "qwen3-35b":    "qwen3.6-35b-a3b"
@@ -270,7 +269,7 @@ hooks:
 #     - when preloading multiple models at once, define a group
 #       otherwise models will be loaded and swapped out
     preload:
-      - "Qwen3.8-27B-Uncensored-OrcaRouter-Q6K"
+      - "Qwen3.8-27B-Uncensored-OrcaRouter-Q6K-short"
 
 
 routing:
@@ -280,7 +279,8 @@ routing:
       matrix:
         vars:
           q38uh: Qwen3.8-27B-Uncensored-HauhauCS-Q6KP
+          q38uos: Qwen3.8-27B-Uncensored-OrcaRouter-Q6K-short
           q38uo: Qwen3.8-27B-Uncensored-OrcaRouter-Q6K
 
         sets:
-          qwen38_variants: "q38uh & q38uo"
+          qwen38_variants: "q38uos & q38uh & q38uo"
